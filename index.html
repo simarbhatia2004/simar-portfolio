@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simar Bhatia | Product Designer &amp; Front End Developer</title>
+  <meta name="description" content="Portfolio of Simar Bhatia - Product Designer and Front End Developer specializing in UI/UX and clean code." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="theme-split">
+
+  <!-- Header / Navigation Bar -->
+  <header class="site-header" id="top">
+    <div class="header-container">
+      
+      <!-- Brand Logo -->
+      <a href="#top" class="brand-logo" title="Simar Bhatia">
+        <div class="logo-badge">
+          <span class="logo-text">SB</span>
+        </div>
+        <div class="logo-title">
+          <span class="logo-name">Simar Bhatia</span>
+          <span class="logo-role">Designer &amp; Developer</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Social and Action Links -->
+      <div class="header-actions">
+        <ul class="social-links">
+          <li>
+            <a href="https://github.com/simarbhatia2004" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64c-.88 0-1.6.72-1.6 1.61 0 .88.72 1.6 1.6 1.6.88 0 1.6-.72 1.6-1.6 0-.89-.72-1.61-1.6-1.61z"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <button class="btn-copy-email" id="copyEmailBtn" title="Click to copy email">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              </svg>
+              <span class="copy-text">Email</span>
+              <span class="copy-tooltip" id="emailTooltip">Copied!</span>
+            </button>
+          </li>
+        </ul>
+
+        <!-- Mobile Menu Hamburger -->
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Interactive Hero Section -->
+  <main>
+    <section class="hero-section" id="hero">
+
+      <!-- Background Ambiance Layers -->
+      <div class="hero-bg-layer designer-bg" id="designerBg">
+        <div class="art-blob blob-1"></div>
+        <div class="art-blob blob-2"></div>
+        <div class="art-splatter splatter-1"></div>
+        <div class="designer-watermark">DESIGN</div>
+      </div>
+      <div class="hero-bg-layer coder-bg" id="coderBg">
+        <div class="code-grid"></div>
+        <div class="coder-watermark">&lt;CODE/&gt;</div>
+        <div class="code-particles">
+          <span class="floating-code fc-1">&lt;div class="hero"&gt;</span>
+          <span class="floating-code fc-2">{ useState }</span>
+          <span class="floating-code fc-3">const simar = new Dev();</span>
+          <span class="floating-code fc-4">&lt;/coder&gt;</span>
+          <span class="floating-code fc-5">01011010</span>
+        </div>
+      </div>
+
+      <div class="hero-content-wrapper">
+        
+        <!-- Left Wing: Designer Description -->
+        <div class="hero-wing designer-wing" id="designerWing">
+          <div class="wing-badge designer-badge">
+            <span class="badge-icon">🎨</span>
+            <span>UI/UX &amp; Visual Design</span>
+          </div>
+          <h1 class="wing-title designer-title" id="designerTitle">designer</h1>
+          <p class="wing-desc">
+            Product designer specialising in UI/UX design, design systems, and crafting delightful human-centered digital experiences.
+          </p>
+          <div class="wing-tags">
+            <span class="tag">Figma</span>
+            <span class="tag">Design Systems</span>
+            <span class="tag">Wireframing</span>
+            <span class="tag">UI/UX</span>
+          </div>
+          <div class="wing-action">
+            <button class="snap-btn designer-snap" id="snapDesignerBtn">
+              <span>View Designer Side</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Center: Interactive Split Avatar Canvas -->
+        <div class="hero-avatar-center">
+          <div class="split-slider-container" id="sliderContainer">
+            
+            <!-- Layer 1: Underneath (Full Coder Avatar) -->
+            <div class="avatar-layer coder-layer">
+              <img src="assets/images/avatar-coder.jpg" alt="Simar Bhatia - Front End Coder" class="avatar-img" id="coderAvatarImg" />
+              <div class="layer-overlay coder-overlay"></div>
+            </div>
+
+            <!-- Layer 2: Top Layer with clip-path (Full Designer Avatar) -->
+            <div class="avatar-layer designer-layer" id="designerLayer">
+              <img src="assets/images/avatar-designer.jpg" alt="Simar Bhatia - Product Designer" class="avatar-img" id="designerAvatarImg" />
+              <div class="layer-overlay designer-overlay"></div>
+            </div>
+
+            <!-- Split Line Divider & Drag Handle -->
+            <div class="slider-divider" id="sliderDivider">
+              <div class="slider-handle" id="sliderHandle" aria-label="Slide between Designer and Coder">
+                <div class="handle-pulse"></div>
+                <div class="handle-content">
+                  <span class="handle-arrow">◀</span>
+                  <span class="handle-icon">⚡</span>
+                  <span class="handle-arrow">▶</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Label Tooltip -->
+            <div class="slider-hint" id="sliderHint">
+              <span>Drag or hover to slide</span>
+            </div>
+
+          </div>
+
+          <!-- Controls Bar below Avatar -->
+          <div class="avatar-controls">
+            <button class="ctrl-pill" id="ctrlDesigner">🎨 Designer</button>
+            <button class="ctrl-pill active" id="ctrlReset">⚡ 50 / 50 Split</button>
+            <button class="ctrl-pill" id="ctrlCoder">💻 &lt;Coder&gt;</button>
+          </div>
+        </div>
+
+        <!-- Right Wing: Coder Description -->
+        <div class="hero-wing coder-wing" id="coderWing">
+          <div class="wing-badge coder-badge">
+            <span class="badge-icon">💻</span>
+            <span>Frontend &amp; Engineering</span>
+          </div>
+          <h1 class="wing-title coder-title" id="coderTitle">
+            <span class="bracket">&lt;</span>coder<span class="bracket">&gt;</span>
+          </h1>
+          <p class="wing-desc">
+            Front end developer who writes clean, elegant, scalable and efficient code with modern web technologies.
+          </p>
+          <div class="wing-tags">
+            <span class="tag">React</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">HTML5 / CSS3</span>
+            <span class="tag">Clean Code</span>
+          </div>
+          <div class="wing-action">
+            <button class="snap-btn coder-snap" id="snapCoderBtn">
+              <span>View Coder Side</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Scroll down indicator -->
+      <div class="scroll-indicator">
+        <a href="#about" class="scroll-mouse" aria-label="Scroll to next section">
+          <span class="scroll-wheel"></span>
+        </a>
+      </div>
+
+    </section>
+
+    <!-- Future Sections Placeholder Preview -->
+    <section class="section-preview" id="about">
+      <div class="preview-container">
+        <div class="section-header">
+          <span class="sub-title">Step 2 Preview</span>
+          <h2>Next Sections (Ready for Phase 2)</h2>
+          <p>Hero section is live on localhost! Once you review, we will build out your custom case studies, skills matrix, and interactive contact form.</p>
+        </div>
+
+        <div class="preview-grid">
+          <div class="preview-card">
+            <div class="card-icon">📁</div>
+            <h3>Featured Portfolio</h3>
+            <p>Interactive cards showcasing your UI/UX designs and live web apps with live previews.</p>
+          </div>
+          <div class="preview-card">
+            <div class="card-icon">⚡</div>
+            <h3>Skills &amp; Toolkit</h3>
+            <p>Categorized grid of design tools (Figma, Adobe XD) and development stack (React, JS, CSS).</p>
+          </div>
+          <div class="preview-card">
+            <div class="card-icon">📬</div>
+            <h3>Get In Touch</h3>
+            <p>Direct contact form and social channels for collaboration and opportunities.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p>&copy; 2026 Simar Bhatia. Inspired by Adham Dannaway &bull; Designed &amp; Coded with ❤️</p>
+      <a href="#top" class="back-to-top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
