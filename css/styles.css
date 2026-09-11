@@ -474,9 +474,13 @@ body {
   color: #181824;
 }
 
-.designer-title:hover {
+.designer-title:hover, .designer-wing.is-focused .designer-title {
   color: var(--designer-primary);
   transform: translateX(-4px);
+}
+
+.designer-wing.is-focused {
+  opacity: 1;
 }
 
 .coder-title {
@@ -489,13 +493,17 @@ body {
   transition: color 0.3s ease;
 }
 
-.coder-title:hover {
+.coder-title:hover, .coder-wing.is-focused .coder-title {
   color: #0f172a;
   transform: translateX(4px);
 }
 
-.coder-title:hover .bracket {
+.coder-title:hover .bracket, .coder-wing.is-focused .coder-title .bracket {
   color: var(--designer-primary);
+}
+
+.coder-wing.is-focused {
+  opacity: 1;
 }
 
 .wing-desc {

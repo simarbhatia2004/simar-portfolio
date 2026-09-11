@@ -99,12 +99,18 @@ document.addEventListener('DOMContentLoaded', () => {
     ctrlReset.classList.remove('active');
     ctrlCoder.classList.remove('active');
 
-    if (pos >= 80) {
+    if (pos >= 75) {
       ctrlDesigner.classList.add('active');
-    } else if (pos <= 20) {
+      if (designerWing) designerWing.classList.add('is-focused');
+      if (coderWing) coderWing.classList.remove('is-focused');
+    } else if (pos <= 25) {
       ctrlCoder.classList.add('active');
-    } else if (pos >= 40 && pos <= 60) {
+      if (coderWing) coderWing.classList.add('is-focused');
+      if (designerWing) designerWing.classList.remove('is-focused');
+    } else {
       ctrlReset.classList.add('active');
+      if (designerWing) designerWing.classList.remove('is-focused');
+      if (coderWing) coderWing.classList.remove('is-focused');
     }
   }
 
@@ -144,35 +150,47 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('touchend', handleDragEnd);
 
   // ==========================================
-  // ADHAM DANNAWAY STYLE HOVER INTERACTIONS
+  // FULL HERO SECTION HOVER & SLIDE INTERACTIONS
+  // Works across the entire hero section, not just specific elements!
   // ==========================================
+  let currentHoverZone = 'center'; // 'left', 'right', 'center'
 
-  // Hover over Designer Wing -> slide to reveal Designer
-  if (designerWing) {
-    designerWing.addEventListener('mouseenter', () => {
-      if (!isDragging) animateTo(90, 500);
-    });
-  }
-
-  // Hover over Coder Wing -> slide to reveal Coder
-  if (coderWing) {
-    coderWing.addEventListener('mouseenter', () => {
-      if (!isDragging) animateTo(10, 500);
-    });
-  }
-
-  // Mouse move across avatar container tracks slider position directly
-  sliderContainer.addEventListener('mousemove', (e) => {
-    if (isDragging) return;
-    const rect = sliderContainer.getBoundingClientRect();
-    const pct = ((e.clientX - rect.left) / rect.width) * 100;
-    updateSplit(pct);
-  });
-
-  // Mouse leaving hero resets gently to 50/50 split
   if (heroSection) {
+    heroSection.addEventListener('mousemove', (e) => {
+      // If user is actively dragging the slider handle, let drag handler control
+      if (isDragging) return;
+
+      // Calculate cursor position across the whole hero section width
+      const rect = heroSection.getBoundingClientRect();
+      const relativeX = (e.clientX - rect.left) / rect.width;
+
+      // Left section (< 42%): Cursor on Designer side -> slide to reveal full Designer image
+      // Right section (> 58%): Cursor on Coder side -> slide to reveal full Coder image
+      // Center zone (42% to 58%): Cursor in the middle -> slide to 50/50 split
+      if (relativeX < 0.42) {
+        if (currentHoverZone !== 'left') {
+          currentHoverZone = 'left';
+          animateTo(95, 420);
+        }
+      } else if (relativeX > 0.58) {
+        if (currentHoverZone !== 'right') {
+          currentHoverZone = 'right';
+          animateTo(5, 420);
+        }
+      } else {
+        if (currentHoverZone !== 'center') {
+          currentHoverZone = 'center';
+          animateTo(50, 420);
+        }
+      }
+    });
+
+    // Mouse leaving hero resets gently to 50/50 split
     heroSection.addEventListener('mouseleave', () => {
-      if (!isDragging) animateTo(50, 700);
+      if (!isDragging) {
+        currentHoverZone = 'center';
+        animateTo(50, 600);
+      }
     });
   }
 
